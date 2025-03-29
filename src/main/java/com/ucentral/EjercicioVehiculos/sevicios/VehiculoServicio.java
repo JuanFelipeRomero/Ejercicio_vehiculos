@@ -14,6 +14,11 @@ public class VehiculoServicio {
     }
 
     public VehiculoDTO crearVehiculo (VehiculoDTO vehiculoDTO) {
+
+        if (vehiculoDTO.getPlaca() != null) {
+            vehiculoDTO.setPlaca(vehiculoDTO.getPlaca().toUpperCase());
+        }
+
         Vehiculo vehiculo = Vehiculo.builder()
                 .placa(vehiculoDTO.getPlaca())
                 .marca(vehiculoDTO.getMarca())
