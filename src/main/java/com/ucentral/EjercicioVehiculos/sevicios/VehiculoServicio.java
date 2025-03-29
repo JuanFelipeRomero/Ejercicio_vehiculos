@@ -5,6 +5,8 @@ import com.ucentral.EjercicioVehiculos.persistencia.entidades.Vehiculo;
 import com.ucentral.EjercicioVehiculos.persistencia.repositorios.VehiculoRepositorio;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VehiculoServicio {
     private final VehiculoRepositorio vehiculoRepositorio;
@@ -30,6 +32,10 @@ public class VehiculoServicio {
         vehiculoRepositorio.save(vehiculo);
 
         return vehiculoDTO;
+    }
+
+    public List<Vehiculo> obtenerTodos() {
+        return vehiculoRepositorio.findAll();
     }
 
 }
