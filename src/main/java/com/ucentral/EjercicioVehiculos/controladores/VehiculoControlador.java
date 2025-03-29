@@ -14,8 +14,8 @@ public class VehiculoControlador {
         this.vehiculoServicio = vehiculoServicio;
     }
 
-    @PostMapping("/registrar")
-    public ResponseEntity<VehiculoDTO> registrar(@RequestBody VehiculoDTO vehiculoDTO) {
+    @PostMapping("/crear")
+    public ResponseEntity<VehiculoDTO> crear(@RequestBody VehiculoDTO vehiculoDTO) {
         return ResponseEntity.ok(vehiculoServicio.crearVehiculo(vehiculoDTO));
     }
 }
